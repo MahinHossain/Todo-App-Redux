@@ -32,7 +32,7 @@ export default function Tasklist(props) {
                   searchvalue.toLowerCase().trim()
                 );
               } else {
-                return filterItem;
+                return <mark>{filterItem}</mark>;
               }
             })
 
