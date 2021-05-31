@@ -21,7 +21,7 @@ export default function TaskCreateForm(props) {
     dispatch(StoreTaskDAtaAction(TaskFromInpute));
   };
   return (
-    <div>
+    <div className="mt-5">
       <form className="container" onSubmit={(e) => submitForm(e)}>
         <div class="form-group">
           <input
@@ -29,6 +29,7 @@ export default function TaskCreateForm(props) {
             placeholder="Title"
             value={TaskFromInpute.Title}
             onChange={(e) => handlechngeInput("Title", e.target.value)}
+            required
           />
         </div>
 

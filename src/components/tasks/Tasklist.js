@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteTaskAction } from "../../redux/action/TasklistAction";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export default function Tasklist(props) {
-  const [loading, setloading] = useState(false);
   const { tasks } = { ...props };
   let searchvalue = useSelector(
     (state) => state.counterreducer.handleSearchTaskValue
@@ -15,17 +14,16 @@ export default function Tasklist(props) {
       <table class="table  table-hover table-bordered  table-striped">
         <thead>
           <tr>
-            <th scope="col">Id</th>
+            {/* <th scope="col">Id</th> */}
             <th scope="col">Task</th>
             <th scope="col">prority</th>
-            <th className="pointer" scope="col">
+            <th scope="col" className="text-center">
               Action
             </th>
           </tr>
         </thead>
         <tbody>
           {tasks
-
             .filter((filterItem) => {
               if (searchvalue.trim().length > 0) {
                 return filterItem.Title.toLowerCase().includes(
@@ -35,19 +33,17 @@ export default function Tasklist(props) {
                 return <mark>{filterItem}</mark>;
               }
             })
-
             .map((item, index) => (
               <tr key={index}>
-                <td>{item._id}</td>
+                {/* <td>{item._id}</td> */}
                 <td>{item.Title}</td>
                 <td>{item.Prority}</td>
-                <td>
+                <td className=" text-center p-0">
                   <Link to={`/edit/${item._id}`}>
-                    <button className=" btn btn-success ">edit</button>
+                    <button className="btn btn-success mr-5">edit</button>
                   </Link>
-
                   <button
-                    className=" btn btn-danger ml-2"
+                    className="btn btn-danger  mr-auto"
                     onClick={() =>
                       dispatch(deleteTaskAction(item._id, item.Title))
                     }
