@@ -13,19 +13,6 @@ export default function Header() {
   const [searchValue, setsearchValue] = useState("");
   const dispatch = useDispatch();
 
-  //Replaces componentDidMount and componentWillUnmount
-  // useEffect(() => {
-  //   var timerID = setInterval(() => tick(), 1000);
-
-  //   return function cleanup() {
-  //     clearInterval(timerID);
-  //   };
-  // });
-
-  // function tick() {
-  //   setDate(new Date());
-  // }
-
   useEffect(() => {
     setInterval(() => {
       setDate(new Date());
@@ -38,41 +25,52 @@ export default function Header() {
   };
 
   return (
-    <nav className="container navbar bg-dark  rounded navbar-expand-lg col-sm-6 col-md-12 ">
-      <a class="navbar-brand text-danger" href="#">
+    <nav className="container navbar bg-dark  rounded navbar-expand-lg col-sm-6 col-md-12">
+      <h5 class="navbar-brand text-light mb-3" href="#">
         My Todo
-      </a>
+      </h5>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">
-              <Link to="./">Home</Link>
+              <Link to="./">
+                <p className="text-light">Home</p>
+              </Link>
             </a>
           </li>
 
           <li class="nav-item active">
             <a class="nav-link" href="#">
-              <Link to="./detail">Task List</Link>
+              <Link to="./detail">
+                {" "}
+                <p className="text-light">Task List</p>
+              </Link>
             </a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">
-              <Link to="./getapi">Form Test</Link>
+              <Link to="./getapi">
+                {" "}
+                <p className="text-light">Form </p>
+              </Link>
             </a>
           </li>
 
           <li class="nav-item active">
             <a class="nav-link" href="#">
-              <Link to="./aboutus">About Us</Link>
+              <Link to="./aboutus">
+                {" "}
+                <p className="text-light">About us</p>
+              </Link>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">
-              <h5>
+            <a class="nav-link">
+              <a className="text-light">
                 Total task{" "}
                 <span class="badge badge-danger">{taskss.length}</span>
-              </h5>
+              </a>
             </a>
           </li>
         </ul>

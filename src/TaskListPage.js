@@ -37,10 +37,8 @@ export default function TaskListPage(props) {
         )}
 
         <div className="container">
-          <div className="float-left ml-5">
-            <h3 className="mt-2 bor mb-2 border bg-aqua border-primary text-primary">
-              My Task
-            </h3>
+          <div className="float-left ml-3">
+            <h3 className="mt-2 rounded  bg-light text-primary">My Task</h3>
           </div>
 
           <div className="float-right mr-5">
