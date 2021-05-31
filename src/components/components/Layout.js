@@ -3,9 +3,12 @@ import Headers from "./Header";
 import Footer from "./Footer";
 export default function Layout(props) {
   return (
-    <div className="">
+    <div>
       {props.children}
-      <Footer />
+      <div className="mt-5">
+        {" "}
+        <Footer />
+      </div>
     </div>
   );
 }

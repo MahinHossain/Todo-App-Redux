@@ -20,7 +20,7 @@ export default function TaskCreateForm(props) {
     dispatch(StoreTaskDAtaAction(TaskFromInpute));
   };
   return (
-    <div className="mt-3">
+    <div className="mt-5">
       <form className="" onSubmit={(e) => submitForm(e)}>
         <div class="form-group">
           <input

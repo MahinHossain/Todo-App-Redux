@@ -30,8 +30,8 @@ export default function TaskEdit(props) {
     dispatch(UpdateTaskDAtaAction(TaskFromInpute, id));
   };
   return (
-    <div className="mt-4">
-      <form className="container" onSubmit={(e) => UpdateTask(e)}>
+    <div className="mt-2">
+      <form className="" onSubmit={(e) => UpdateTask(e)}>
         <div class="form-group">
           <input
             class="form-control"
@@ -56,8 +56,7 @@ export default function TaskEdit(props) {
           </select>
         </div>
 
-        <button type="submit" className=" btn btn-success float-left">
-          {" "}
+        <button type="submit" className=" btn btn-success mb-2 float-left">
           Update Data
         </button>
       </form>
