@@ -30,7 +30,7 @@ export default function TaskEdit(props) {
     dispatch(UpdateTaskDAtaAction(TaskFromInpute, id));
   };
   return (
-    <div>
+    <div className="mt-4">
       <form className="container" onSubmit={(e) => UpdateTask(e)}>
         <div class="form-group">
           <input

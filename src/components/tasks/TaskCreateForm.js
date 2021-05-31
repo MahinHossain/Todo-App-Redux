@@ -21,7 +21,7 @@ export default function TaskCreateForm(props) {
     dispatch(StoreTaskDAtaAction(TaskFromInpute));
   };
   return (
-    <div className="mt-5">
+    <div className="mt-3">
       <form className="container" onSubmit={(e) => submitForm(e)}>
         <div class="form-group">
           <input
@@ -40,7 +40,7 @@ export default function TaskCreateForm(props) {
             value={TaskFromInpute.Priority}
             onChange={(e) => handlechngeInput("Prority", e.target.value)}
           >
-            <option value="">select priority</option>
+            <option value="">Select priority</option>
             <option value="Low">Low</option>
             <option value="Average">Average</option>
             <option value="Medium">Medium</option>

@@ -16,14 +16,13 @@ export default function TaskListPage(props) {
     dispatch(GetApiDataAction());
   }, []);
   return (
-    <div className="mt-5">
+    <div className="mt-3">
       <Layout>
         <CounterComponent />
         <br></br>
-
         {newUserFormInputShow ? (
           <div>
-            <h3> New User</h3>
+            <h3> Add new user</h3>
 
             <div>
               <TaskCreateForm />

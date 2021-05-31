@@ -72,8 +72,6 @@ export const deleteTaskAction = (id, name) => (dispatch) => {
   axios
     .delete(`https://todo-app37.herokuapp.com/deleteTodo?id=${id}`)
     .then((res) => {
-      // dispatch({ type: Types.UPDATE_NEW_VAL, payload: newUser });
-      //dispatch(GetApiDataAction());
       if (res.data.ok == 1) {
         dispatch(GetApiDataAction());
         alert(`${name}  deleted`);
