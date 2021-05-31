@@ -58,7 +58,7 @@ export default function Header() {
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">
-              <Link to="./getapi">Get Api</Link>
+              <Link to="./getapi">Form Test</Link>
             </a>
           </li>
 

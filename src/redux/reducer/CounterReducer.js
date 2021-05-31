@@ -12,6 +12,7 @@ const initializitState = {
     Title: "",
     Prority: "",
   },
+  Is_Loading: null,
   handleSearchTaskValue: "",
 };
 
@@ -36,6 +37,7 @@ function CounterReducer(state = initializitState, action) {
       };
       break;
     case Types.GET_TASKS_Details:
+      console.log(`action.payload,----`, action.payload);
       return {
         ...state,
         taskForm: action.payload,
@@ -57,6 +59,14 @@ function CounterReducer(state = initializitState, action) {
       return {
         ...state,
         handleSearchTaskValue: action.payload,
+      };
+      break;
+
+    case Types.Is_Loading:
+      console.log(`object action.payload,`, action.payload);
+      return {
+        ...state,
+        Is_Loading: action.payload,
       };
       break;
 

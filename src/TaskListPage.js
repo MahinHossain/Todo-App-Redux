@@ -7,13 +7,14 @@ import TaskCreateForm from "./components/tasks/TaskCreateForm";
 import CounterComponent from "./counter/CounterComponent";
 import { GetApiDataAction } from "./redux/action/TasklistAction";
 export default function TaskListPage(props) {
+  const isloading = useSelector((state) => state.counterreducer.Is_Loading);
+
   const [newUserFormInputShow, setnewUserFormInputShow] = useState(false);
   const dispatch = useDispatch();
   let taskss = useSelector((state) => state.counterreducer.tasks);
   useEffect(() => {
     dispatch(GetApiDataAction());
   }, []);
-
   return (
     <div>
       <Layout>
@@ -70,7 +71,19 @@ export default function TaskListPage(props) {
           </div>
         </div>
         <div className="container mt-5">
-          <Tasklist tasks={taskss} />
+          {isloading ? (
+            <div className="mt-5 p-5">
+              {" "}
+              <h4 className="text-danger  ">Loading.......</h4>
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border text-danger" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <Tasklist tasks={taskss} />
+          )}
         </div>
       </Layout>
     </div>

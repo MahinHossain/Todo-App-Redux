@@ -3,17 +3,20 @@ import * as Types from "../types/Types";
 
 export const GetApiDataAction = () => async (dispatch) => {
   let data = [];
-  axios.get("http://todo-app37.herokuapp.com/loadtodo").then((res) => {
+  let isLoading = true;
+  await axios.get("http://todo-app37.herokuapp.com/loadtodo").then((res) => {
     data = res.data;
-
+    isLoading = false;
     data.sort();
     data.reverse();
     dispatch({ type: Types.GET_TASKS, payload: data });
+    dispatch({ type: Types.Is_Loading, payload: isLoading });
   });
 };
 export const GetApiDataActionDetails = (id) => async (dispatch) => {
   let data = [];
-  axios
+
+  await axios
     .get(`http://todo-app37.herokuapp.com/singleTodo?id=${id}`)
     .then((res) => {
       data = res.data;

@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { deleteTaskAction } from "../../redux/action/TasklistAction";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export default function Tasklist(props) {
+  const [loading, setloading] = useState(false);
   const { tasks } = { ...props };
   let searchvalue = useSelector(
     (state) => state.counterreducer.handleSearchTaskValue
   );
   const dispatch = useDispatch();
-
   return (
     <div className="container">
-      <table class="table  table-hover table-bordered table-responsive-sm table-responsive-md table-striped table-responsive">
+      <table class="table  table-hover table-bordered  table-striped">
         <thead>
           <tr>
             <th scope="col">Id</th>
