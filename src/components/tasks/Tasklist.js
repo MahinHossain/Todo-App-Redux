@@ -10,13 +10,13 @@ export default function Tasklist(props) {
   );
   const dispatch = useDispatch();
   return (
-    <div className="container">
+    <div className="">
       <table class="table  table-hover table-bordered  table-striped">
         <thead>
           <tr>
             {/* <th scope="col">Id</th> */}
             <th scope="col">Task</th>
-            <th scope="col">prority</th>
+            <th scope="col">Prority</th>
             <th scope="col" className="text-center">
               Action
             </th>
@@ -30,7 +30,7 @@ export default function Tasklist(props) {
                   searchvalue.toLowerCase().trim()
                 );
               } else {
-                return <mark>{filterItem}</mark>;
+                return filterItem;
               }
             })
             .map((item, index) => (
@@ -38,7 +38,7 @@ export default function Tasklist(props) {
                 {/* <td>{item._id}</td> */}
                 <td>{item.Title}</td>
                 <td>{item.Prority}</td>
-                <td className=" text-center p-0">
+                <td className=" text-center p-1">
                   <Link to={`/edit/${item._id}`}>
                     <button className="btn btn-success mr-5">edit</button>
                   </Link>

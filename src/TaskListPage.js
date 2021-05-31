@@ -22,7 +22,7 @@ export default function TaskListPage(props) {
         <br></br>
         {newUserFormInputShow ? (
           <div>
-            <h3> Add new user</h3>
+            <h3> Add new Task</h3>
 
             <div>
               <TaskCreateForm />
@@ -35,17 +35,17 @@ export default function TaskListPage(props) {
           <div></div>
         )}
 
-        <div className="container">
-          <div className="float-left ml-3">
+        <div className="">
+          <div className="float-left ">
             <h3 className="mt-2 rounded  bg-light text-primary">My Task</h3>
           </div>
 
-          <div className="float-right mr-5">
+          <div className="float-right ">
             {newUserFormInputShow ? (
               <div>
                 {" "}
                 <button
-                  className="btn btn-danger mt-2 mb-2"
+                  className="btn btn-danger  btn-lg mt-2 mb-2"
                   onClick={() =>
                     setnewUserFormInputShow(newUserFormInputShow ? false : true)
                   }
@@ -56,7 +56,7 @@ export default function TaskListPage(props) {
             ) : (
               <div>
                 <button
-                  className=" btn btn-success mt-2 mb-2"
+                  className=" btn btn-success  btn-lg mt-2 mb-2"
                   onClick={() =>
                     setnewUserFormInputShow(newUserFormInputShow ? false : true)
                   }
@@ -67,7 +67,7 @@ export default function TaskListPage(props) {
             )}
           </div>
         </div>
-        <div className="container mt-5">
+        <div className=" mt-5">
           {isloading ? (
             <div className="mt-5 p-5">
               {" "}

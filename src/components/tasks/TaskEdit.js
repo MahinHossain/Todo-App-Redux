@@ -48,7 +48,7 @@ export default function TaskEdit(props) {
             value={TaskFromInpute.Priority}
             onChange={(e) => handlechngeInput("Prority", e.target.value)}
           >
-            <option value="">select priority</option>
+            <option value="">Select priority</option>
             <option value="Low">Low</option>
             <option value="High">High</option>
             <option value="Medium">Medium</option>

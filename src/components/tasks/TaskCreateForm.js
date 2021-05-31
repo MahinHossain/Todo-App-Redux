@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  GetApiDataAction,
   StoreTaskDAtaAction,
   handlechngeInputForm,
 } from "../../redux/action/TasklistAction";
@@ -22,7 +21,7 @@ export default function TaskCreateForm(props) {
   };
   return (
     <div className="mt-3">
-      <form className="container" onSubmit={(e) => submitForm(e)}>
+      <form className="" onSubmit={(e) => submitForm(e)}>
         <div class="form-group">
           <input
             class="form-control"
